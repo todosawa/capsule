@@ -11,7 +11,9 @@
                 ClaudeはAnthropicが開発した対話型AIアシスタントです。
                 プログラミング、分析、創造的な作業など、様々なタスクをサポートするAIツールです。
             </p>
-            <img src="{{ url_for('static', filename='images/claude_overview.png') }}" class="img-fluid mb-3" alt="Claude Overview">
+            <div class="text-center">
+                <img src="https://anthropic.com/images/claude_hero.jpg" class="img-fluid mb-3" alt="Claude Overview" style="max-width: 400px;">
+            </div>
         </div>
     </div>
 
@@ -28,7 +30,11 @@
                     <p>必要な機能のコードを生成したり、バグを見つけて修正したりできます。</p>
                 </div>
             </div>
-            <img src="{{ url_for('static', filename='images/claude_features.png') }}" class="img-fluid mb-3" alt="Claude Features">
+            <div class="text-center mt-4">
+                <i class="fas fa-code fa-4x text-primary"></i>
+                <i class="fas fa-comments fa-4x text-success mx-4"></i>
+                <i class="fas fa-bug fa-4x text-danger"></i>
+            </div>
         </div>
     </div>
 
@@ -39,18 +45,23 @@
                 <div class="step mb-4">
                     <h4>1. 質問の準備</h4>
                     <p>解決したい問題や実装したい機能を具体的に説明します。</p>
+                    <i class="fas fa-pencil-alt fa-3x text-primary"></i>
                 </div>
                 <div class="step mb-4">
                     <h4>2. 対話の実施</h4>
                     <p>Claudeと対話しながら、望む結果が得られるまで相互にやり取りを行います。</p>
+                    <i class="fas fa-comments fa-3x text-success"></i>
                 </div>
                 <div class="step">
                     <h4>3. 結果の活用</h4>
                     <p>提案されたコードをプロジェクトに適用し、必要に応じて修正を依頼します。</p>
+                    <i class="fas fa-check-circle fa-3x text-info"></i>
                 </div>
             </div>
-            <img src="{{ url_for('static', filename='images/claude_usage.png') }}" class="img-fluid" alt="Claude Usage Guide">
         </div>
     </div>
 </div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 {% endblock %} 
