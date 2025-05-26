@@ -1,0 +1,62 @@
+{% extends "main_component.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Model Context Protocol (MCP) ガイド</h1>
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title">MCPとは</h2>
+            <p class="card-text">
+                Model Context Protocol (MCP)は、AIモデルのコンテキストを効率的に管理し、
+                活用するためのプロトコルです。これにより、より正確で一貫性のあるAIの応答を得ることができます。
+            </p>
+            <img src="{{ url_for('static', filename='images/mcp_overview.png') }}" class="img-fluid mb-3" alt="MCP Overview">
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title">主な特徴</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>🎯 コンテキスト管理</h4>
+                    <p>対話の文脈を正確に把握し、維持します。</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>🔄 一貫性の保証</h4>
+                    <p>AIの応答の一貫性を高めます。</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>📈 パフォーマンス最適化</h4>
+                    <p>効率的なリソース使用で迅速な応答を提供します。</p>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/mcp_features.png') }}" class="img-fluid mb-3" alt="MCP Features">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">活用方法</h2>
+            <div class="steps">
+                <div class="step mb-4">
+                    <h4>1. コンテキストの設定</h4>
+                    <p>作業環境と目標を明確に定義します。</p>
+                    <img src="{{ url_for('static', filename='images/mcp_step1.png') }}" class="img-fluid mb-3" alt="MCP Step 1">
+                </div>
+                <div class="step mb-4">
+                    <h4>2. プロトコルの適用</h4>
+                    <p>定義されたルールに従ってAIと相互作用を行います。</p>
+                    <img src="{{ url_for('static', filename='images/mcp_step2.png') }}" class="img-fluid mb-3" alt="MCP Step 2">
+                </div>
+                <div class="step">
+                    <h4>3. 結果の最適化</h4>
+                    <p>フィードバックを通じて結果を継続的に改善します。</p>
+                    <img src="{{ url_for('static', filename='images/mcp_step3.png') }}" class="img-fluid" alt="MCP Step 3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

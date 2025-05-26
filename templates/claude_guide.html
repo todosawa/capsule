@@ -1,0 +1,56 @@
+{% extends "main_component.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Claude AI ガイド</h1>
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title">Claude AIとは</h2>
+            <p class="card-text">
+                ClaudeはAnthropicが開発した対話型AIアシスタントです。
+                プログラミング、分析、創造的な作業など、様々なタスクをサポートするAIツールです。
+            </p>
+            <img src="{{ url_for('static', filename='images/claude_overview.png') }}" class="img-fluid mb-3" alt="Claude Overview">
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title">主な機能</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>🤝 自然な対話</h4>
+                    <p>日常的な言葉で対話しながら、コーディングのサポートを受けることができます。</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>💻 コード生成とデバッグ</h4>
+                    <p>必要な機能のコードを生成したり、バグを見つけて修正したりできます。</p>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/claude_features.png') }}" class="img-fluid mb-3" alt="Claude Features">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">使用方法</h2>
+            <div class="steps">
+                <div class="step mb-4">
+                    <h4>1. 質問の準備</h4>
+                    <p>解決したい問題や実装したい機能を具体的に説明します。</p>
+                </div>
+                <div class="step mb-4">
+                    <h4>2. 対話の実施</h4>
+                    <p>Claudeと対話しながら、望む結果が得られるまで相互にやり取りを行います。</p>
+                </div>
+                <div class="step">
+                    <h4>3. 結果の活用</h4>
+                    <p>提案されたコードをプロジェクトに適用し、必要に応じて修正を依頼します。</p>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/claude_usage.png') }}" class="img-fluid" alt="Claude Usage Guide">
+        </div>
+    </div>
+</div>
+{% endblock %} 
