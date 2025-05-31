@@ -287,14 +287,14 @@ $(document).ready(function () {
     var w = $(window).width();
     var h = $(window).height();
 
-
     function getRandomArbitrary(min, max) {
         return Math.random() * (max - min) + min;
     }
 
-
     for (var i = 0; i <= countEl; i++) {
-        var newEl = ('<div class="el '+ classes[~~(Math.random()*classes.length)] +'" style="left: ' + getRandomArbitrary(0, w) + 'px; transform: rotate('+ getRandomArbitrary(0, 360) +'deg)"></div>');
+        var startPosition = getRandomArbitrary(-100, w + 100);
+        var startRotation = getRandomArbitrary(0, 360);
+        var newEl = ('<div class="el '+ classes[~~(Math.random()*classes.length)] +'" style="left: ' + startPosition + 'px; top: -100px; transform: rotate('+ startRotation +'deg)"></div>');
         $('body .els').append(newEl);
         i++;
     }
@@ -303,7 +303,15 @@ $(document).ready(function () {
 
     tl.set(arrayEl, {y: -350});
     arrayEl.sort(function(){return 0.5-Math.random()});
-    tl.staggerTo(arrayEl, 10, {y: h + 300, rotation: Math.random() * 360, ease: Sine.easeInOut, repeat: -1}, 0.3);
+    tl.staggerTo(arrayEl, 10, {
+        y: h + 300, 
+        x: function() {
+            return getRandomArbitrary(-200, w + 200);
+        },
+        rotation: Math.random() * 360, 
+        ease: Sine.easeInOut, 
+        repeat: -1
+    }, 0.3);
 
     /**
     $('.el').click(function() {
