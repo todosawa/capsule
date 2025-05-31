@@ -29,5 +29,10 @@ def mcp_guide():
 	return render_template('mcp_guide.html')
 
 
+@app.route('/yuuno-genius')
+def yuuno_genius():
+	return render_template('yuuno_genius.html')
+
+
 if __name__ == '__main__':
 	app.run(debug=True)
