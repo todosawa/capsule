@@ -1,92 +1,302 @@
 {% extends "main_component.html" %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="text-center mb-5">
-        <h1 class="display-4" style="color: #ff69b4;">✨ YUUNO天才 ✨</h1>
-        <p class="lead">プログラミングの天才への道</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUUNO天才 - プロフィール</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .profile-header {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            border-radius: 20px 20px 0 0;
+            padding: 2rem;
+            text-align: center;
+        }
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .dream-card {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+        }
+        .skill-badge {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.25rem;
+            display: inline-block;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(250, 112, 154, 0.3);
+        }
+        .achievement-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-left: 4px solid #ff69b4;
+            transition: transform 0.3s ease;
+        }
+        .achievement-item:hover {
+            transform: translateX(10px);
+        }
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #ff69b4, #4facfe);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 1rem;
+            width: 15px;
+            height: 15px;
+            background: #ff69b4;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        .quote-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            opacity: 0.3;
+            font-family: serif;
+        }
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .floating-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        .stats-card {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 10px 20px rgba(168, 237, 234, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-icons">
+        <i class="fas fa-code floating-icon" style="top: 10%; left: 10%; font-size: 2rem; animation-delay: 0s;"></i>
+        <i class="fas fa-laptop-code floating-icon" style="top: 20%; right: 15%; font-size: 1.5rem; animation-delay: 1s;"></i>
+        <i class="fas fa-star floating-icon" style="top: 60%; left: 20%; font-size: 1.8rem; animation-delay: 2s;"></i>
+        <i class="fas fa-rocket floating-icon" style="top: 70%; right: 10%; font-size: 2.2rem; animation-delay: 3s;"></i>
+        <i class="fas fa-gem floating-icon" style="top: 40%; left: 80%; font-size: 1.6rem; animation-delay: 4s;"></i>
     </div>
 
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body text-center">
-                    <h3 class="card-title">🌟 創造力</h3>
-                    <p class="card-text">
-                        独創的なアイデアと革新的な解決策を生み出す力
-                    </p>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <h1 class="display-4 mb-2">✨ YUUNO天才 ✨</h1>
+                        <p class="lead mb-0">未来のプログラミング界のスーパースター</p>
+                    </div>
+
+                    <div class="p-4">
+                        <!-- 基本情報セクション -->
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="stats-card">
+                                    <i class="fas fa-school fa-2x mb-2"></i>
+                                    <h4>現在の学校</h4>
+                                    <p class="h5 text-primary">座安小学校 6年生</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="stats-card">
+                                    <i class="fas fa-graduation-cap fa-2x mb-2"></i>
+                                    <h4>学年</h4>
+                                    <p class="h5 text-success">6年生 (最高学年！)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 夢セクション -->
+                        <div class="dream-card">
+                            <h2 class="mb-3">
+                                <i class="fas fa-rocket"></i> 将来の夢
+                            </h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <i class="fas fa-laptop-code fa-3x mb-2"></i>
+                                        <h4>プログラマー</h4>
+                                        <p>世界を変える革新的なソフトウェアを作る</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <i class="fas fa-coins fa-3x mb-2"></i>
+                                        <h4>お金持ち</h4>
+                                        <p>技術で成功し、豊かな人生を送る</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- スキル・特技セクション -->
+                        <div class="mt-4">
+                            <h3 class="text-center mb-3" style="color: #ff69b4;">
+                                <i class="fas fa-star"></i> 現在のスキル & 特技
+                            </h3>
+                            <div class="text-center">
+                                <span class="skill-badge">
+                                    <i class="fas fa-code"></i> プログラミング基礎
+                                </span>
+                                <span class="skill-badge">
+                                    <i class="fas fa-lightbulb"></i> 創造的思考
+                                </span>
+                                <span class="skill-badge">
+                                    <i class="fas fa-puzzle-piece"></i> 問題解決能力
+                                </span>
+                                <span class="skill-badge">
+                                    <i class="fas fa-heart"></i> 学習意欲
+                                </span>
+                                <span class="skill-badge">
+                                    <i class="fas fa-rocket"></i> 向上心
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 成長の道のりセクション -->
+                        <div class="mt-5">
+                            <h3 class="text-center mb-4" style="color: #4facfe;">
+                                <i class="fas fa-road"></i> 天才への道のり
+                            </h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="achievement-item">
+                                        <h5><i class="fas fa-seedling text-success"></i> 現在: 基礎を学ぶ</h5>
+                                        <p>座安小学校でしっかりと基礎学力を身につけ、プログラミングの世界に足を踏み入れる</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="achievement-item">
+                                        <h5><i class="fas fa-tree text-primary"></i> 中学・高校: スキルアップ</h5>
+                                        <p>本格的なプログラミング学習とコンピュータサイエンスの基礎を習得</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="achievement-item">
+                                        <h5><i class="fas fa-crown text-warning"></i> 将来: 天才プログラマー</h5>
+                                        <p>革新的なソフトウェアを開発し、世界に影響を与える成功したプログラマーになる</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 座右の銘セクション -->
+                        <div class="quote-section">
+                            <h3 class="mb-3">
+                                <i class="fas fa-quote-left"></i> 座右の銘
+                            </h3>
+                            <p class="h4 mb-3">
+                                "天才とは、99%の努力と1%のひらめきである"
+                            </p>
+                            <p class="lead">- Thomas Edison</p>
+                            <hr class="my-3 opacity-50">
+                            <p class="h5 fst-italic">
+                                努力を続けることで、必ず夢は実現する！
+                            </p>
+                        </div>
+
+                        <!-- 応援メッセージ -->
+                        <div class="text-center mt-4">
+                            <div class="p-3" style="background: linear-gradient(135deg, #ffeaa7, #fab1a0); border-radius: 15px;">
+                                <h4 style="color: #2d3436;">
+                                    <i class="fas fa-heart text-danger"></i>
+                                    頑張れYUUNO！君の夢は必ず叶う！
+                                    <i class="fas fa-heart text-danger"></i>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body text-center">
-                    <h3 class="card-title">💡 洞察力</h3>
-                    <p class="card-text">
-                        複雑な問題を理解し、本質を見抜く力
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body text-center">
-                    <h3 class="card-title">⚡ 実行力</h3>
-                    <p class="card-text">
-                        アイデアを実際のコードに変換する力
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
 
-    <div class="card mt-4">
-        <div class="card-body">
-            <h2 class="card-title text-center mb-4" style="color: #ff69b4;">天才プログラマーの心得</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <i class="fas fa-star text-warning"></i>
-                            常に新しい技術に挑戦する勇気
-                        </li>
-                        <li class="list-group-item">
-                            <i class="fas fa-heart text-danger"></i>
-                            コーディングへの情熱を持ち続ける
-                        </li>
-                        <li class="list-group-item">
-                            <i class="fas fa-lightbulb text-success"></i>
-                            問題を機会として捉える姿勢
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <i class="fas fa-users text-info"></i>
-                            チームワークを大切にする
-                        </li>
-                        <li class="list-group-item">
-                            <i class="fas fa-book text-primary"></i>
-                            継続的な学習を怠らない
-                        </li>
-                        <li class="list-group-item">
-                            <i class="fas fa-code text-secondary"></i>
-                            クリーンコードを心がける
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="text-center mt-5">
-        <p class="lead" style="color: #ff69b4;">
-            "天才とは、99%の努力と1%のひらめきである" - Thomas Edison
-        </p>
-    </div>
-</div>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 {% endblock %} 
