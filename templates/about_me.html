@@ -1,0 +1,123 @@
+{% extends "main_component.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金桂煥 - 自己紹介</title>
+    <style>
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .name {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .title {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .content {
+            font-size: 1.1em;
+            color: #444;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 2px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="name">金 桂煥（キム ケイファン）</div>
+            <div class="title">シニアWebシステムエンジニア</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <p>はじめまして、<span class="highlight">金桂煥</span>と申します。韓国出身で、日本のIT業界で<span class="highlight">20年以上</span>のキャリアを積んでまいりました。明知大学の日本語科を卒業後、Web系システム開発を中心に、多様な企業での開発経験を通じて技術力を磨いてきました。</p>
+            </div>
+            
+            <div class="section">
+                <p>これまでの経歴では、株式会社日本情報処理、インデックス沖縄、テラウェブクリエイト、フロッサー、ラビットフット、POTS、そして最近まではアレクシアフィンテック株式会社など、様々な規模の企業でWeb系システムの設計・開発・運用に携わってまいりました。2023年には個人事業主として「かぷせる」を立ち上げ、独立系の開発も経験いたしました。</p>
+            </div>
+            
+            <div class="section">
+                <p>技術面では、<span class="tech-badge">Java</span> <span class="tech-badge">Salesforce</span>を中心とした開発に長年従事し、2024年には<span class="highlight">Salesforce Administrator</span>の資格も取得いたしました。また、時代の変化に対応するため、最近では<span class="highlight">Bive coding</span>や<span class="highlight">MCP（Model Context Protocol）連携</span>といった最新技術の習得にも積極的に取り組んでおります。</p>
+            </div>
+            
+            <div class="section">
+                <p>IT業界は日々進歩し続けており、<span class="highlight">AI技術の発展</span>や<span class="highlight">開発手法の革新</span>など、常に新しい技術トレンドが生まれています。私は単に既存の技術に安住するのではなく、これらの変化を積極的に取り入れ、現代的な開発アプローチを学び続けることで、より価値の高いシステム開発を実現したいと考えております。</p>
+            </div>
+            
+            <div class="section">
+                <p>20年間の豊富な経験と、最新技術への探求心を活かし、貴社のプロジェクトに貢献できることを確信しております。多言語環境での開発経験と、日韓両国でのビジネス経験も、グローバルな視点での課題解決に役立てることができます。どうぞよろしくお願いいたします。</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>連絡先：090-9138-0852 | zanpamisaki@naver.com</p>
+            <p>沖縄県豊見城市在住</p>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
