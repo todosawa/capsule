@@ -291,8 +291,9 @@ $(document).ready(function () {
         return Math.random() * (max - min) + min;
     }
 
+    // Generate elements from outside the viewport
     for (var i = 0; i <= countEl; i++) {
-        var startPosition = getRandomArbitrary(-100, w + 100);
+        var startPosition = getRandomArbitrary(-100, w + 100); // Include areas outside the screen
         var startRotation = getRandomArbitrary(0, 360);
         var newEl = ('<div class="el '+ classes[~~(Math.random()*classes.length)] +'" style="left: ' + startPosition + 'px; top: -100px; transform: rotate('+ startRotation +'deg)"></div>');
         $('body .els').append(newEl);
@@ -306,7 +307,7 @@ $(document).ready(function () {
     tl.staggerTo(arrayEl, 10, {
         y: h + 300, 
         x: function() {
-            return getRandomArbitrary(-200, w + 200);
+            return getRandomArbitrary(-200, w + 200); // Allow movement outside viewport
         },
         rotation: Math.random() * 360, 
         ease: Sine.easeInOut, 
